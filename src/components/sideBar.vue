@@ -6,8 +6,8 @@
         FULL TIME
       </label>
       <div>
-        <h2 class="mb-4">LOCATION</h2>
-        <input class="input is-normal mb-3" type="text" placeholder="City, state, zip code or country">
+        <h2 class="mb-4">CATEGORIES</h2>
+        <input class="input is-normal mb-3" type="text" placeholder="category of movie">
       </div>
       <div id="location">
         <div class="control is-flex-direction-row">
@@ -27,7 +27,7 @@
 export default {
   data() {
     return {
-      locations: ["London", "Amsterdam", "New York", "Berlin"],
+      locations: ["Popular", "Upcoming", "Now Showing", "Action"],
       open: true,
       overlay: true,
       fullheight: true,

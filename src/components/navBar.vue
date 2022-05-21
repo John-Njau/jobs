@@ -2,8 +2,8 @@
   <div>
     <section class="container is-fluid">
       <div class="mb-5 p-3">
-        <span class="title is-title mb-6">Github </span>
-        <span class="is-size-6">jobs</span>
+        <span class="title is-title mb-6">TMDB </span>
+        <span class="is-size-6">Movies</span>
       </div>
     </section>
       <div class="m-0" id="navt">
