@@ -2,7 +2,7 @@
   <section>
     <div class="content">
       <div class="media">
-        <div class="media-left">
+        <div class="media-left pt-5">
           <img
             :src="'https://image.tmdb.org/t/p/w200/' + movie.poster_path"
             alt="Placeholder image"
@@ -77,6 +77,12 @@ export default {
   /* width: 100px; */
   height: 150px;
   /* float:left!important; */
+}
+
+.content{
+  border: 1px solid #e6e6e6;
+  background: #fff;
+  margin:0.5rem
 }
 
 @media screen and (max-width: 767px) {

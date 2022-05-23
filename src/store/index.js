@@ -31,7 +31,17 @@ const actions = {
       .then((response) => {
         commit("SET_Movies", response.data);
       })
+  },
+  movieCategory({commit}, payload) {
+    axios
+      .get(
+        `https://api.themoviedb.org/3/movie/${payload}?api_key=22f3e85e05becdb7e502c1f391dbd90d`
+      )
+      .then((response) => {
+        commit("SET_Movies", response.data);
+      })
   }
+
 };
 
 const mutations = {

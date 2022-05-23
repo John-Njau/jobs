@@ -5,7 +5,7 @@
         <b-field class="input p-5 is-center" id="search-bg">
           <div id="inputfield">
             <b-input
-              placeholder="Movie"
+              placeholder="Search Movie ..."
               class="input"
               v-model="search"
             ></b-input>
@@ -14,12 +14,12 @@
         </b-field>
       </div>
       <div class="columns is-mobile">
-        <div class="column is-one-third">
-          <p class="bd-notification is-info">First nested column</p>
+        <div class="column is-one-third" id="cat">
+          <p class="bd-notification is-info"></p>
           <sidebar></sidebar>
         </div>
         <div class="column">
-          <p class="bd-notification is-info">Second nested column</p>
+          <p class="bd-notification is-info"></p>
           <jobCard
             v-for="movie in movies.results"
             :key="movie.id"
@@ -61,7 +61,9 @@ export default {
   methods: {
     searchmethod() {
       this.$store.dispatch("searchMovies", this.search);
-      
+    },
+    moviecategory() {
+      this.$store.dispatch("movieCategory", this.search);
     },
   },
 };
@@ -69,5 +71,11 @@ export default {
 <style scoped>
 .column {
   border: 1px solid #dedede;
+}
+
+@media only screen and (max-width: 500px) {
+ #cat{
+   display: none;
+  }
 }
 </style>

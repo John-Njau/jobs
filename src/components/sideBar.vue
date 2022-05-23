@@ -1,20 +1,16 @@
 <template>
-  <section>
+  <section id="cat">
     <div class="p-1">
-      <label class="checkbox mb-6">
-        <input type="checkbox" />
-        FULL TIME
-      </label>
       <div>
-        <h2 class="mb-4">CATEGORIES</h2>
+        <h2 class="mb-4">CATEGORY</h2>
         <input class="input is-normal mb-3" type="text" placeholder="category of movie">
       </div>
-      <div id="location">
+      <div id="category">
         <div class="control is-flex-direction-row">
-          <div v-for="(location, index) in locations" :key="index">
+          <div v-for="(category, index) in categories" :key="index">
             <label class="radio ml-3">
-              <input type="radio" class="m-2" name="locations" />
-              {{ location}}
+              <input type="radio" class="m-2" name="categorys" />
+              {{ category}}
             </label>
           </div>
         </div>
@@ -27,19 +23,13 @@
 export default {
   data() {
     return {
-      locations: ["Popular", "Upcoming", "Now Showing", "Action"],
-      open: true,
-      overlay: true,
-      fullheight: true,
-      fullwidth: false,
-      right: false,
-      uppercase: true,
+      categories: ["Popular", "Upcoming", "Now Showing", "Action"]
     };
   },
 
   computed: {
     upCase() {
-      return this.locations.toUpperCase()
+      return this.categories.toUpperCase()
     },
   },
 };
@@ -49,4 +39,7 @@ export default {
 .p-1 {
   padding: 1em;
 }
+
+
+
 </style>
