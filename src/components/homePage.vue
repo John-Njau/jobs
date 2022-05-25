@@ -7,11 +7,10 @@
             <b-input
               placeholder="Search Movie ..."
               class="input"
-              v-model="search"
-            ></b-input>
+              v-model="search">
+              </b-input>
             <b-button class="p-4" type="is-info" @click="searchmethod"
-              >Search</b-button
-            >
+              >Search</b-button>
           </div>
         </b-field>
       </div>
@@ -20,20 +19,20 @@
           <p class="bd-notification is-info"></p>
           <sidebar></sidebar>
         </div>
-        <div class="column">
+        <div class="column" >
           <div
             class="content"
             v-for="movie in movies.results"
             :key="movie.id" 
+            id="main-card"
           >
-            <router-link :to="{ name: 'movie', params: { id: movie.id } }">
-                <div class="media-left pt-5">
-                  <img
+            <router-link :to="{ name: 'movie', params: { id: movie.id } }" id="link">
+                <div class="media-left pt-5"  >
+                  <img class="m-3"
                     :src="
                       'https://image.tmdb.org/t/p/w200/' + movie.poster_path
                     "
-                    alt="Placeholder image"
-                  />
+                    alt="Placeholder image"/>
                 </div>
                 <div class="media-right">
                   <div class="media-content">
@@ -44,15 +43,15 @@
                     <br />
                     <div id="buttonloc">
                       <div>
-                        <button class="button">
+                        <p class="">
+                          lang:
                           {{ movie.original_language }}
-                        </button>
+                        </p>
                         <div id="dates">
                           <b>
                             Votes: {{ movie.vote_count }}
                             <span class="ml-4">
-                              Released on: {{ movie.release_date }}</span
-                            >
+                              Released on: {{ movie.release_date }}</span>
                           </b>
                         </div>
                       </div>
@@ -97,8 +96,16 @@ export default {
 };
 </script>
 <style scoped>
-.column {
+#main-card{
   border: 1px solid #dedede;
+  background-color: rgb(245, 245, 245);
+  text-decoration: none;
+  max-width: 600px;
+  
+}
+
+#link{
+color: #000000
 }
 
 @media only screen and (max-width: 500px) {
