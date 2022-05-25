@@ -8,7 +8,8 @@ Vue.use(Vuex);
 
 const state = {
   movies: [],
-  movie: {}
+  movie: {},
+  category: {}
 };
 
 const getters = {};
@@ -41,6 +42,14 @@ const actions = {
       .then((response) => {
         commit("SET_MOVIE_DETAILS", response.data);
       })
+  },
+  getCategory({commit}, payload){
+    axios.get(
+      `https://api.themoviedb.org/3/movie/${payload}?api_key=22f3e85e05becdb7e502c1f391dbd90d&language=en-US`
+    )
+    .then((response) => {
+      commit("SET_MOVIE_CATEGORY", response.data);
+    })
   }
 
 };
@@ -51,6 +60,9 @@ const mutations = {
   },
   SET_MOVIE_DETAILS(state, movie) {
     state.movie = movie
+  },
+  SET_MOVIE_CATEGORY(state, category) {
+    state.category = category
   }
 }
 

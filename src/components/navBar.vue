@@ -1,17 +1,13 @@
 <template>
   <div>
     <section class="container is-fluid">
-      <div class="mb-5 p-3">
+      <div class="mb-5 p-3" id="nav">
         <router-link to="/">
           <span class="title is-title mb-6">TMDB </span>
         </router-link>
         <span class="is-size-6">Movies</span>
       </div>
     </section>
-    <!-- <div class="m-0" id="navt">
-      <router-link to="/"></router-link>
-      <router-link to="/jobs"></router-link>
-    </div> -->
     <router-view :key="$route.name" />
   </div>
 </template>
@@ -35,6 +31,11 @@ export default {
 };
 </script>
 <style>
+#nav {
+  background-color: rgb(255, 255, 255);
+  color: rgb(190, 54, 54)
+}
+
 #search-bg {
   background-image: url("../assets/backgroundImg.png");
   height: 20vh;

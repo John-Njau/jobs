@@ -1,17 +1,16 @@
 <template>
-  <div class="about container is-fluid" id="view">
+  <div class="container is-fluid" id="movie">
     <div class="column">
       <br />
       <div class="columns is-mobile">
-        <div class="column is-one-third">
-      <router-link to="/" class="button">Home</router-link>
-        </div>
-        <div class="column">
+        <div class="column" id="movie-col">
           <p class="title is-title">
-            <strong>About {{ movie.title }}</strong>
+            <strong
+              ><span>{{ category }} Movie</span></strong
+            >
           </p>
           <div v-if="movie">
-            <p class="bd-notification is-info">movie id {{ id }}</p>
+            <p class="bd-notification is-info"></p>
             <small>Title</small>
             <span class="title is-title"> {{ movie.title }}</span>
             <div class="media-left pt-5">
@@ -22,6 +21,13 @@
               <br />
               <small> <strong> Overview:</strong></small> <br />
               {{ movie.overview }} <br />
+              <strong>Audience: </strong>
+              <div id="age">
+                <p v-if="movie.adult === true" class="">
+                  Adult Content. PG 21+
+                </p>
+                <p v-else>Suitable For General Family Viewing</p>
+              </div>
               <small><strong>Released on: </strong></small
               >{{ movie.release_date }}
             </div>
@@ -36,30 +42,26 @@
 </template>
 <script>
 export default {
-  name: "Movieview",
-  props: ["id"],
+  name: "Categoryview",
+  props: ["category"],
   computed: {
     movie() {
-      return this.$store.state.movie;
+      return this.$store.state.category;
     },
   },
   mounted() {
-    this.$store.dispatch("movieDetails", this.id);
-  }
+    this.$store.dispatch("getCategory", this.category);
+  },
 };
 </script>
 <style scoped>
-#view {
+#movie {
   height: 100vh;
+  text-align: center;
 }
-.button{
-  outline: none;
-  text-decoration: none;
-  background-color: rgba(255, 196, 0, 0.281)
-}
-.button:hover{
-  text-decoration: none;
-  background-color: rgba(77, 63, 13, 0.281);
-  color: white
+
+#movie-col{
+  border: 1px solid #ccc;
+ box-shadow: 1px 1px 1px rgb(7, 7, 7, 0.4);
 }
 </style>

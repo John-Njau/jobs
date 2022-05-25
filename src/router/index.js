@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import LatestView from '../views/movie/LatestView'
 import ErrorPage from '../views/ErrorPageView'
 
 Vue.use(VueRouter)
@@ -14,12 +15,15 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/movie/:id',
+    path: '/movie/:id(\\d+)',
     name: 'movie',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/movie/MovieView.vue'),
+    props: true
+  },
+  {
+    path: '/movie/:category',
+    name: 'category',
+    component: LatestView,
     props: true
   },
 //  catchall, 404 page
@@ -28,7 +32,6 @@ const routes = [
   name: 'NotFound',
   component: ErrorPage
 }
-
 ]
 
 const router = new VueRouter({

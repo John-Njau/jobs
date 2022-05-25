@@ -1,57 +1,42 @@
 <template>
   <section id="cat">
     <div class="p-1">
-      <div>
-        <h2 class="mb-4">CATEGORY</h2>
-      </div>
+      <br /><br />
+      <h2 class="mb-4">Movie Category</h2>
       <div id="category">
         <div class="control is-flex-direction-row">
-            <b-button
-            tag="router-link"
-            class="button is-rounded m-1"
-            to="/latest"
-          >
-            Latest
-          </b-button>  <br />
-           <b-button
-            tag="router-link"
-            class="button is-rounded m-1"
-            to="/nowshowing"
-          >
-            Now Showing
-          </b-button>  <br />
+          <!-- latest -->
           <b-button
             tag="router-link"
             class="button is-rounded m-1"
-            to="/upcoming"
+            to="/movie/latest"
+            >latest
+          </b-button>
+          <br />
+          <!-- upcoming -->
+          <b-button
+            tag="router-link"
+            class="button is-rounded m-1"
+            to="/movie/upcoming"
           >
             Upcoming
-          </b-button> <br>
-         
-          
+          </b-button>
+          <br />
+          <!-- top_rated -->
           <b-button
             tag="router-link"
             class="button is-rounded m-1"
-            to="/popular"
-          >
-            Popular
-          </b-button> <br>
-          <b-button
-            tag="router-link"
-            class="button is-rounded m-1"
-            to="/top_rated"
+            to="/movie/top_rated"
           >
             Top Rated
           </b-button>
-        
         </div>
       </div>
     </div>
   </section>
 </template>
 <script>
-export default {
-};
+export default {};
 </script>
 
 <style>
