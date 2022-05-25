@@ -3,16 +3,28 @@
     <div class="p-1">
       <div>
         <h2 class="mb-4">CATEGORY</h2>
-        <input class="input is-normal mb-3" type="text" placeholder="category of movie">
       </div>
       <div id="category">
-        <div class="control is-flex-direction-row">
-          <div v-for="(category, index) in categories" :key="index">
-            <label class="radio ml-3">
-              <input type="radio" class="m-2" name="categorys" />
-              {{ category}}
-            </label>
-          </div>
+        <div class="control is-flex-direction-row">    
+              <b-button
+                tag="router-link"
+                class="button is-rounded m-1"
+                to="/top_rated"
+              >
+                Top Rated
+              </b-button> <br>
+              <b-button tag="router-link"  class="button is-rounded m-1"
+              to="/nowshowing"> Now Showing </b-button> <br>
+               <b-button tag="router-link"  class="button is-rounded m-1"
+              to="/popular"> Popular </b-button> <br>
+           <b-button tag="router-link"  class="button is-rounded m-1"
+              to="/upcoming"> Upcoming </b-button>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
         </div>
       </div>
     </div>
@@ -23,13 +35,13 @@
 export default {
   data() {
     return {
-      categories: ["Popular", "Upcoming", "Now Showing", "Action"]
+      categories: ["Popular", "Upcoming", "Now Showing", "Action"],
     };
   },
 
   computed: {
     upCase() {
-      return this.categories.toUpperCase()
+      return this.categories.toUpperCase();
     },
   },
 };
@@ -39,7 +51,4 @@ export default {
 .p-1 {
   padding: 1em;
 }
-
-
-
 </style>

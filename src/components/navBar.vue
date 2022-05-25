@@ -2,14 +2,16 @@
   <div>
     <section class="container is-fluid">
       <div class="mb-5 p-3">
-        <span class="title is-title mb-6">TMDB </span>
+        <router-link to="/">
+          <span class="title is-title mb-6">TMDB </span>
+        </router-link>
         <span class="is-size-6">Movies</span>
       </div>
     </section>
-      <div class="m-0" id="navt">
-      <router-link to="/"></router-link> 
+    <!-- <div class="m-0" id="navt">
+      <router-link to="/"></router-link>
       <router-link to="/jobs"></router-link>
-    </div>
+    </div> -->
     <router-view :key="$route.name" />
   </div>
 </template>

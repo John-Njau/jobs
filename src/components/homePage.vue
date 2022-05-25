@@ -9,7 +9,9 @@
               class="input"
               v-model="search"
             ></b-input>
-            <b-button class="p-4" type="is-info" @click="searchmethod" >Search</b-button>
+            <b-button class="p-4" type="is-info" @click="searchmethod"
+              >Search</b-button
+            >
           </div>
         </b-field>
       </div>
@@ -19,13 +21,46 @@
           <sidebar></sidebar>
         </div>
         <div class="column">
-          <p class="bd-notification is-info"></p>
-          <jobCard
+          <div
+            class="content"
             v-for="movie in movies.results"
-            :key="movie.id"
-            :movie="movie"
+            :key="movie.id" 
           >
-          </jobCard>
+            <router-link :to="{ name: 'movie', params: { id: movie.id } }">
+                <div class="media-left pt-5">
+                  <img
+                    :src="
+                      'https://image.tmdb.org/t/p/w200/' + movie.poster_path
+                    "
+                    alt="Placeholder image"
+                  />
+                </div>
+                <div class="media-right">
+                  <div class="media-content">
+                    <p class="title is-4">{{ movie.title }}</p>
+                  </div>
+                  <div class="overview-content">
+                    {{ movie.overview }}
+                    <br />
+                    <div id="buttonloc">
+                      <div>
+                        <button class="button">
+                          {{ movie.original_language }}
+                        </button>
+                        <div id="dates">
+                          <b>
+                            Votes: {{ movie.vote_count }}
+                            <span class="ml-4">
+                              Released on: {{ movie.release_date }}</span
+                            >
+                          </b>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </router-link>
+          </div>
         </div>
       </div>
     </div>
@@ -34,16 +69,12 @@
 <script>
 import sidebar from "./sideBar.vue";
 import navbar from "./navBar.vue";
-import jobCard from "./jobCard.vue";
-
-// const moviesPages = [...Array(10).keys()].map(i => ({id: (i + 1), name: `Page ${i + 1}`}));
 
 export default {
   name: "home",
   components: {
     sidebar,
     navbar,
-    jobCard,
   },
   data() {
     return {
@@ -61,10 +92,7 @@ export default {
   methods: {
     searchmethod() {
       this.$store.dispatch("searchMovies", this.search);
-    },
-    moviecategory() {
-      this.$store.dispatch("movieCategory", this.search);
-    },
+    }
   },
 };
 </script>
@@ -74,8 +102,8 @@ export default {
 }
 
 @media only screen and (max-width: 500px) {
- #cat{
-   display: none;
+  #cat {
+    display: none;
   }
 }
 </style>

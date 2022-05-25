@@ -4,7 +4,7 @@
     </section>
 </template>
 <script>
-import jobCard from "./jobCard.vue";
+import jobCard from "./MovieCard.vue";
 
 export default {
     components: {
