@@ -6,7 +6,7 @@
         <div class="column" id="movie-col">
           <p class="title is-title">
             <strong
-              ><span>{{ category }} Movie</span></strong
+              ><span id="movie-category">{{ category }} Movie</span></strong
             >
           </p>
           <div v-if="movie">
@@ -59,10 +59,17 @@ export default {
 #movie {
   height: 100vh;
   text-align: center;
+   font-family: "Poppins", sans-serif;
+   
 }
 
 #movie-col{
   border: 1px solid #ccc;
  box-shadow: 1px 1px 1px rgb(7, 7, 7, 0.4);
+ background-color: #fff
+}
+
+#movie-category{
+  font-family: "Pacifico", cursive;
 }
 </style>

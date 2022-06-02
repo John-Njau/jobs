@@ -3,12 +3,12 @@
     <div class="column">
       <br />
       <div class="columns is-mobile">
-        <div class="column is-one-third">
+        <div class="column is-2 ">
           <router-link to="/" class="button">Home</router-link>
         </div>
-        <div class="column">
+        <div class="column is-8 " id="details">
           <p class="title is-title">
-            <strong>About {{ movie.title }}</strong>
+            <strong id="about">Movie Details</strong>
           </p>
           <div v-if="movie">
             <p class="bd-notification is-info">movie id {{ id }}</p>
@@ -58,14 +58,29 @@ export default {
   font-family: "Macondo", cursive;
   font-family: "Montserrat", sans-serif;
   font-family: "Nunito Sans", sans-serif;
-  font-family: "Pacifico", cursive;
+  /* font-family: "Pacifico", cursive; */
   font-family: "Poppins", sans-serif;
-  font-family: "Raleway", sans-serif;
+  /* font-family: "Raleway", sans-serif; */
 }
+#about{
+    font-family: "Macondo", cursive;
+    font-family: "Nunito Sans", cursive; 
+  /* font-family: "Pacifico", cursive; */
+   /* font-family: "Koulen", cursive; */
+
+}
+
+#details{
+    font-family: "Montserrat", sans-serif;
+     border: 1px solid #ccc;
+ box-shadow: 1px 1px 1px rgb(7, 7, 7, 0.4);
+ background-color: #fff
+}
+
 .button {
   outline: none;
   text-decoration: none;
-  background-color: rgba(255, 196, 0, 0.281);
+  background-color: rgba(255, 255, 255, 0.281);
 }
 .button:hover {
   text-decoration: none;

@@ -118,6 +118,7 @@ export default {
   background-color: rgb(255, 255, 255);
   text-decoration: none;
   max-width: 900px;
+   box-shadow: 2px 2px 2px 2px rgb(0, 0, 0, 0.4);
   font-family: "Akshar", sans-serif;
   font-family: "Koulen", cursive;
   font-family: "Macondo", cursive;
@@ -127,6 +128,7 @@ export default {
   font-family: "Poppins", sans-serif;
   font-family: "Raleway", sans-serif;
 }
+
 
 #link {
   color: #000000;
