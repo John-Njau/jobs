@@ -4,7 +4,7 @@
       <br />
       <div class="columns is-mobile">
         <div class="column is-one-third">
-      <router-link to="/" class="button">Home</router-link>
+          <router-link to="/" class="button">Home</router-link>
         </div>
         <div class="column">
           <p class="title is-title">
@@ -45,21 +45,31 @@ export default {
   },
   mounted() {
     this.$store.dispatch("movieDetails", this.id);
-  }
+  },
 };
 </script>
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Akshar:wght@300&family=Koulen&family=Macondo&family=Montserrat:wght@200;500&family=Nunito+Sans:wght@200&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;1,300&family=Raleway:ital,wght@0,300;0,500;1,200&display=swap");
+
 #view {
   height: 100vh;
+  font-family: "Akshar", sans-serif;
+  font-family: "Koulen", cursive;
+  font-family: "Macondo", cursive;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
+  font-family: "Pacifico", cursive;
+  font-family: "Poppins", sans-serif;
+  font-family: "Raleway", sans-serif;
 }
-.button{
+.button {
   outline: none;
   text-decoration: none;
-  background-color: rgba(255, 196, 0, 0.281)
+  background-color: rgba(255, 196, 0, 0.281);
 }
-.button:hover{
+.button:hover {
   text-decoration: none;
   background-color: rgba(77, 63, 13, 0.281);
-  color: white
+  color: white;
 }
 </style>

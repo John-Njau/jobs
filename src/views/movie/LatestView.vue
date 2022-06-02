@@ -55,6 +55,7 @@ export default {
 };
 </script>
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300&family=Koulen&family=Macondo&family=Montserrat:wght@200;500&family=Nunito+Sans:wght@200&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;1,300&family=Raleway:ital,wght@0,300;0,500;1,200&display=swap');
 #movie {
   height: 100vh;
   text-align: center;
